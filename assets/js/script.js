@@ -74,8 +74,8 @@ const AddFormLangague = (event) => {
                         </select>
                 </div>
         </div>
-        <button type="button" onclick="DeleteFormLangague(this)" class="bg-red-500 text-white py-1 px-1 rounded-md shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
-            Remove
+        <button onclick="DeleteFormLangague(this)" class="bg-red-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
+            -
         </button>
     `;
 
