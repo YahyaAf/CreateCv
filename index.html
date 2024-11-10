@@ -319,14 +319,14 @@
                             <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
                                 LANGAGUES
                             </h6>
-                            <div class="flex flex-wrap">
+                            <div id="parent-lang" class="flex flex-wrap">
                                 <div class="w-full lg:w-12/12 px-4">
                                     <div class="w-full lg:w-6/12 px-4">
                                         <div class="relative w-full mb-3">
                                             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                                                 Langue
                                             </label>
-                                            <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre Compétence">
+                                            <input id="lang1" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre Compétence">
                                         </div>
                                     </div>
                                     <div class="w-full lg:w-12/12 px-4">
@@ -334,7 +334,7 @@
                                             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="language-level">
                                                 Niveau de langue
                                             </label>
-                                            <select id="language-level" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                            <select id="niv1" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                                 <option value="A1">A1 - Débutant</option>
                                                 <option value="A2">A2 - Élémentaire</option>
                                                 <option value="B1">B1 - Intermédiaire</option>
@@ -346,12 +346,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <button onclick="AddFormLangague(event)" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 mt-7">
+                                +
+                            </button>
                         </div>
                         <div class="flex justify-between mt-16">
                             <button
                               class="select-none rounded-lg bg-gray-900 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                               type="button" onclick="Back()">
-                              Prev
+                              Back
                             </button>
                             <button
                               class="select-none rounded-lg bg-gray-900 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
