@@ -163,6 +163,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <hr class="border-t-2 border-gray-300 my-4">
                             <button onclick="AddFormCompetence(event)" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 mt-7">
                                 +
                             </button>
@@ -174,56 +175,62 @@
                             <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
                                 expérience professionnelle
                             </h6>
-                            <div class="flex flex-wrap">
-                                <div class="w-full lg:w-12/12 px-4">
-                                    <div class="relative w-full mb-3">
-                                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
-                                            Titre du Poste
-                                        </label>
-                                        <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre titre de poste">
+                            <div id="parent-exp" class="flex flex-wrap">
+                                <div class="flex flex-wrap">
+                                    <div class="w-full lg:w-12/12 px-4">
+                                        <div class="relative w-full mb-3">
+                                            <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
+                                                Titre du Poste
+                                            </label>
+                                            <input id="post1" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre titre de poste">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="w-full lg:w-12/12 px-4">
-                                    <div class="relative w-full mb-3">
-                                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
-                                            Entreprise
-                                        </label>
-                                        <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Nom d'Entreprise">
+                                    <div class="w-full lg:w-12/12 px-4">
+                                        <div class="relative w-full mb-3">
+                                            <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
+                                                Entreprise
+                                            </label>
+                                            <input id="entreprise1" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Nom d'Entreprise">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="w-full lg:w-12/12 px-4">
-                                    <div class="relative w-full mb-3">
-                                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
-                                            Type d'Expérience
-                                        </label>
-                                        <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre type d'expérience">
+                                    <div class="w-full lg:w-12/12 px-4">
+                                        <div class="relative w-full mb-3">
+                                            <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
+                                                Type d'Expérience
+                                            </label>
+                                            <input id="type1" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre type d'expérience">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="w-full lg:w-4/12 px-4">
-                                    <div class="relative w-full mb-3">
-                                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
-                                            Ville
-                                        </label>
-                                        <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre ville">
+                                    <div class="w-full lg:w-4/12 px-4">
+                                        <div class="relative w-full mb-3">
+                                            <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
+                                                Ville
+                                            </label>
+                                            <input id="villeExp1" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre ville">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="w-full lg:w-4/12 px-4">
-                                    <div class="relative w-full mb-3">
-                                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
-                                            Date d'Ebut
-                                        </label>
-                                        <input type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                    <div class="w-full lg:w-4/12 px-4">
+                                        <div class="relative w-full mb-3">
+                                            <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
+                                                Date d'Ebut
+                                            </label>
+                                            <input id="debutExp1" type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="w-full lg:w-4/12 px-4">
-                                    <div class="relative w-full mb-3">
-                                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
-                                            Date Fin
-                                        </label>
-                                        <input type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                    <div class="w-full lg:w-4/12 px-4">
+                                        <div class="relative w-full mb-3">
+                                            <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
+                                                Date Fin
+                                            </label>
+                                            <input id="finExp1" type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <hr class="border-t-2 border-gray-300 my-4">
+                            <button onclick="AddFormExperience(event)" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 mt-7">
+                                +
+                            </button>
                         </div>
 
     
@@ -233,14 +240,14 @@
                             <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
                                 FINALISED PROJECT
                             </h6>
-                            <div class="flex flex-wrap">
+                            <div id="parent-projet" class="flex flex-wrap">
                                 <div class="w-full lg:w-12/12 px-4">
                                     <div class="w-full lg:w-6/12 px-4">
                                         <div class="relative w-full mb-3">
                                             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                                                 Titre De Projet
                                             </label>
-                                            <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre Compétence">
+                                            <input id="titreProjet1" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre Compétence">
                                         </div>
                                     </div>
                                     <div class="w-full lg:w-12/12 px-4">
@@ -248,11 +255,15 @@
                                             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                                                 Description
                                             </label>
-                                            <textarea placeholder="Votre description sur le projet" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" rows="4"></textarea>
+                                            <textarea id="descriptionProjet1" placeholder="Votre description sur le projet" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" rows="4"></textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <hr class="border-t-2 border-gray-300 my-4">
+                            <button onclick="AddFormProjet(event)" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 mt-7">
+                                +
+                            </button>
                         </div>
     
                
@@ -262,48 +273,54 @@
                             <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
                                 EDUCATION
                             </h6>
-                            <div class="flex flex-wrap">
-                                <div class="w-full lg:w-12/12 px-4">
-                                    <div class="relative w-full mb-3">
-                                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
-                                            Education générale
-                                        </label>
-                                        <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre type et spécialisation">
+                            <div id="parent-education" class="flex flex-wrap">
+                                <div class="flex flex-wrap">
+                                    <div class="w-full lg:w-12/12 px-4">
+                                        <div class="relative w-full mb-3">
+                                            <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
+                                                Education générale
+                                            </label>
+                                            <input id="educationGenerale1" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre type et spécialisation">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="w-full lg:w-12/12 px-4">
-                                    <div class="relative w-full mb-3">
-                                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
-                                            Lieu d'étude
-                                        </label>
-                                        <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre lieu d'etude">
+                                    <div class="w-full lg:w-12/12 px-4">
+                                        <div class="relative w-full mb-3">
+                                            <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
+                                                Lieu d'étude
+                                            </label>
+                                            <input id="lieuEtude1" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre lieu d'etude">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="w-full lg:w-4/12 px-4">
-                                    <div class="relative w-full mb-3">
-                                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
-                                            Ville
-                                        </label>
-                                        <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre ville">
+                                    <div class="w-full lg:w-4/12 px-4">
+                                        <div class="relative w-full mb-3">
+                                            <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
+                                                Ville
+                                            </label>
+                                            <input id="villeEtude1" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre ville">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="w-full lg:w-4/12 px-4">
-                                    <div class="relative w-full mb-3">
-                                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
-                                            Date d'Ebut
-                                        </label>
-                                        <input type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                    <div class="w-full lg:w-4/12 px-4">
+                                        <div class="relative w-full mb-3">
+                                            <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
+                                                Date d'Ebut
+                                            </label>
+                                            <input id="debutEtude1" type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="w-full lg:w-4/12 px-4">
-                                    <div class="relative w-full mb-3">
-                                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
-                                            Date Fin
-                                        </label>
-                                        <input type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                    <div class="w-full lg:w-4/12 px-4">
+                                        <div class="relative w-full mb-3">
+                                            <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
+                                                Date Fin
+                                            </label>
+                                            <input id="finEtude1" type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <hr class="border-t-2 border-gray-300 my-4">
+                            <button onclick="AddFormEducation(event)" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 mt-7">
+                                +
+                            </button>
                         </div>
 
 
@@ -341,6 +358,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <hr class="border-t-2 border-gray-300 my-4">
                             <button onclick="AddFormLangague(event)" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 mt-7">
                                 +
                             </button>
