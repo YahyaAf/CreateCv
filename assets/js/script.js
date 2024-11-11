@@ -6,6 +6,7 @@ const forms = [
   document.getElementById("form5"),
   document.getElementById("form6"),
   document.getElementById("form7"),
+  document.getElementById("form8"),
 ];
 const steppers = [
   document.getElementById("step1"),
@@ -15,6 +16,7 @@ const steppers = [
   document.getElementById("step5"),
   document.getElementById("step6"),
   document.getElementById("step7"),
+  document.getElementById("step8"),
 ];
 let counterForm = 0;
 const Next = () => {
