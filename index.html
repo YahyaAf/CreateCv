@@ -81,7 +81,7 @@
                                         <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                                             Nom d'utilisateur
                                         </label>
-                                        <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre nom complet">
+                                        <input id="nom" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre nom complet">
                                     </div>
                                 </div>
                                 <div class="w-full lg:w-6/12 px-4">
@@ -89,7 +89,7 @@
                                         <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                                             Adresse e-mail
                                         </label>
-                                        <input type="email" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre Address e-mail">
+                                        <input id="email" type="email" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre Address e-mail">
                                     </div>
                                 </div>
                                 <div class="w-full lg:w-6/12 px-4">
@@ -103,7 +103,7 @@
                                         <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                                             titre de CV
                                         </label>
-                                        <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre titre de cv">
+                                        <input id="titleCv" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre titre de cv">
                                     </div>
                                 </div>
                                 <div class="w-full lg:w-6/12 px-4">
@@ -111,7 +111,7 @@
                                         <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                                             linkedin
                                         </label>
-                                        <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre lien de Linkedin">
+                                        <input id="linkedin" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre lien de Linkedin">
                                     </div>
                                 </div>
                                 <div class="w-full lg:w-6/12 px-4">
@@ -119,7 +119,7 @@
                                         <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                                             github
                                         </label>
-                                        <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre lien de github">
+                                        <input id="github" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre lien de github">
                                     </div>
                                 </div>
                                 <div class="w-full lg:w-6/12 px-4">
@@ -127,7 +127,7 @@
                                         <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                                             numero de telephone
                                         </label>
-                                        <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre numero de telephone">
+                                        <input id="numero" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre numero de telephone">
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +145,7 @@
                                         <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                                             description
                                         </label>
-                                        <textarea placeholder="Une petite description de votre profil" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" rows="4"></textarea>
+                                        <textarea id="descriptionProfile" placeholder="Une petite description de votre profil" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" rows="4"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -409,12 +409,15 @@
                               Next
                             </button>
                         </div>
+                        <input type="submit" onclick="Save(event)" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 mt-7" value="Save">
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    
+    <div id="classic">
+        
+    </div>
 
 
     <script src="./assets/js/script.js"></script>

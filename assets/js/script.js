@@ -298,4 +298,151 @@ const DeleteFormEducation = (button) => {
     const formContainer = button.parentElement;
     formContainer.remove();
 };
+
+
+// Save data dans le Cv
+const Save = (event) => {
+    event.preventDefault();
+    // information personelle
+    let nomComplet = document.getElementById('nom').value;
+    let email = document.getElementById('email').value;
+    let titleCv = document.getElementById('titleCv').value;
+    let linkedin = document.getElementById('linkedin').value;
+    let github = document.getElementById('github').value;
+    let numero = document.getElementById('numero').value;
+    // profile
+    let descriptionProfile = document.getElementById('descriptionProfile').value;
+    // competence
+    let competence1 = document.getElementById('competence1').value
+    // experience
+    let post1 = document.getElementById('post1').value
+    let entreprise1 = document.getElementById('entreprise1').value
+    let type1 = document.getElementById('type1').value
+    let villeExp1 = document.getElementById('villeExp1').value
+    let debutExp1 = document.getElementById('debutExp1').value
+    let finExp1 = document.getElementById('finExp1').value
+    // projet
+    let titreProjet1 = document.getElementById('titreProjet1').value
+    let descriptionProjet1 = document.getElementById('descriptionProjet1').value
+    // Education
+    let educationGenerale1 = document.getElementById('educationGenerale1').value
+    let lieuEtude1 = document.getElementById('lieuEtude1').value
+    let villeEtude1 = document.getElementById('villeEtude1').value
+    let debutEtude1 = document.getElementById('debutEtude1').value
+    let finEtude1 = document.getElementById('finEtude1').value
+    // Langues
+    let lang1 = document.getElementById('lang1').value
+    let niv1 = document.getElementById('niv1').value
+
+    let classic = document.getElementById('classic')
+
+    classic.innerHTML=`
+    <div class="bg-gray-100 font-sans">
+
+        <div class="container mx-auto py-8 px-4">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h1 class="text-3xl font-semibold">${nomComplet}</h1>
+                <p class="text-gray-600 font-semibold text-lg">${titleCv}</p>
+                <ul style="list-style: none; gap: 30px;" class="list-disc list-inside text-gray-700 flex mt-3">
+                    <li><span class="font-semibold">Email:</span> ${email}</li>
+                    <li><span class="font-semibold">LinkedIn: </span><a href="https://www.linkedin.com/in/johndoe"
+                            class="text-blue-500 hover:underline">${linkedin}</a></li>
+                    <li><span class="font-semibold">Github:</span> <a href="https://www.johndoe.com" class="text-blue-500 hover:underline">${github}</a>
+                    <li><span class="font-semibold">Telephone:</span> <a href="https://www.johndoe.com" class="text-blue-500 hover:underline">${numero}</a>
+                    </li>
+                </ul>
+    
+                <hr class="my-4">
+    
+                <h2 class="text-xl font-semibold mb-2">Profile</h2>
+                <p class="text-gray-700">Experienced web developer with a passion for creating responsive and user-friendly
+                    ${descriptionProfile}
+                </p>
+                
+                <hr class="my-4">
+                
+                <h2 class="text-xl font-semibold mt-4 mb-2">Competences</h2>
+                <div style="width: 9%;" class="border-2 border-top-color my-2"></div>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>${competence1}</li>
+                </ul>
+                <hr class="my-4">
+                
+
+                <h2 class="text-xl font-semibold mt-4 mb-2">Projets</h2>
+                <div style="width: 5%;" class="border-2 w-20 border-top-color my-3"></div>
+                <div class="mb-4">
+                    <h3 class="font-semibold">${titreProjet1}</h3>
+                    <p class="text-gray-700">${descriptionProjet1}</p>
+                </div>
+
+
+                <hr class="my-4">
+
+                <h2 class="text-xl font-semibold mt-4 mb-2">Experience</h2>
+                <div style="width: 7%;" class="border-2 w-20 border-top-color my-3"></div>
+                <div class="mb-4">
+                    <h3 class=" font-semibold">${post1}, ${entreprise1}</h3>
+                    <p class="text-gray-700">
+                    ${type1}
+                    </p>
+                    <p class="text-gray-600">${debutExp1} - ${finExp1} - ${villeExp1}</p>
+                </div>
+
+                <hr class="my-4">
+                
+                <h2 class="text-xl font-semibold mt-4 mb-2">Education</h2>
+                <div style="width: 7.1%;" class="border-2 w-20 border-top-color my-3"></div>
+                <div class="mb-4">
+                    <h3 class="font-semibold">${educationGenerale1}</h3>
+                    <p class="text-gray-700">${lieuEtude1}</p>
+                    <p class="text-gray-600">${debutEtude1} - ${finEtude1} - ${villeEtude1}</p>
+                </div>
+                
+                <hr class="my-4">
+
+                <h2 class="text-xl font-semibold mt-4 mb-2">Langages</h2>
+                <div class="border-2 w-20 border-top-color my-3"></div>
+                <h3 class="font-semibold">${lang1}</h3>
+                <p class="text-gray-700">${niv1}</p>
+            </div>
+        </div>
+    
+    </div>
+    `;
+
+
+    // console.log('-------------------------------information')
+    // console.log(nomComplet)
+    // console.log(email )
+    // console.log(titleCv)
+    // console.log(linkedin)
+    // console.log(github)
+    // console.log(numero)
+    // console.log('-----------------------------------profile')
+    // console.log(descriptionProfile)
+    // console.log('----------------------------------competence')
+    // console.log(competence1)
+    // console.log('-----------------------------------experience')
+    // console.log(post1)
+    // console.log(entreprise1)
+    // console.log(type1)
+    // console.log(villeExp1)
+    // console.log(debutExp1)
+    // console.log(finExp1)
+    // console.log('-----------------------------------------projet')
+    // console.log(titreProjet1)
+    // console.log(descriptionProjet1)
+    // console.log('-----------------------------------------Education')
+    // console.log(educationGenerale1)
+    // console.log(lieuEtude1)
+    // console.log(villeEtude1)
+    // console.log(debutEtude1)
+    // console.log(finEtude1)
+    // console.log('-----------------------------------------Langues')
+    // console.log(lang1)
+    // console.log(niv1)
+    
+}
+
   
