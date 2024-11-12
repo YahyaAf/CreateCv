@@ -304,157 +304,322 @@ const DeleteFormEducation = (button) => {
     formContainer.remove();
 };
 
+// show value of radio
+const showValue = () => {
+    var selectedRate = document.querySelector('input[name="rate"]:checked');
+    return selectedRate ? selectedRate.value : null;
+}
+
 
 // Save data dans le Cv
 const Save = (event) => {
     event.preventDefault();
     // information personelle
-    let nomComplet = document.getElementById('nom').value;
-    let email = document.getElementById('email').value;
-    let titleCv = document.getElementById('titleCv').value;
-    let linkedin = document.getElementById('linkedin').value;
-    let github = document.getElementById('github').value;
-    let numero = document.getElementById('numero').value;
+        let nomComplet = document.getElementById('nom').value;
+        let email = document.getElementById('email').value;
+        let titleCv = document.getElementById('titleCv').value;
+        let linkedin = document.getElementById('linkedin').value;
+        let github = document.getElementById('github').value;
+        let numero = document.getElementById('numero').value;
     // profile
-    let descriptionProfile = document.getElementById('descriptionProfile').value;
+        let descriptionProfile = document.getElementById('descriptionProfile').value;
     // competence
-    let competence1 = document.getElementById('competence1').value
+        let competence1 = document.getElementById('competence1').value
     // experience
-    let post1 = document.getElementById('post1').value
-    let entreprise1 = document.getElementById('entreprise1').value
-    let type1 = document.getElementById('type1').value
-    let villeExp1 = document.getElementById('villeExp1').value
-    let debutExp1 = document.getElementById('debutExp1').value
-    let finExp1 = document.getElementById('finExp1').value
+        let post1 = document.getElementById('post1').value
+        let entreprise1 = document.getElementById('entreprise1').value
+        let type1 = document.getElementById('type1').value
+        let villeExp1 = document.getElementById('villeExp1').value
+        let debutExp1 = document.getElementById('debutExp1').value
+        let finExp1 = document.getElementById('finExp1').value
     // projet
-    let titreProjet1 = document.getElementById('titreProjet1').value
-    let descriptionProjet1 = document.getElementById('descriptionProjet1').value
+        let titreProjet1 = document.getElementById('titreProjet1').value
+        let descriptionProjet1 = document.getElementById('descriptionProjet1').value
     // Education
-    let educationGenerale1 = document.getElementById('educationGenerale1').value
-    let lieuEtude1 = document.getElementById('lieuEtude1').value
-    let villeEtude1 = document.getElementById('villeEtude1').value
-    let debutEtude1 = document.getElementById('debutEtude1').value
-    let finEtude1 = document.getElementById('finEtude1').value
+        let educationGenerale1 = document.getElementById('educationGenerale1').value
+        let lieuEtude1 = document.getElementById('lieuEtude1').value
+        let villeEtude1 = document.getElementById('villeEtude1').value
+        let debutEtude1 = document.getElementById('debutEtude1').value
+        let finEtude1 = document.getElementById('finEtude1').value
     // Langues
-    let lang1 = document.getElementById('lang1').value
-    let niv1 = document.getElementById('niv1').value
+        let lang1 = document.getElementById('lang1').value
+        let niv1 = document.getElementById('niv1').value
+    // condition
+        let condition = showValue();
 
     let classic = document.getElementById('classic')
+    let modern = document.getElementById('modern')
 
-    classic.innerHTML=`
-    <div class="bg-gray-100 font-sans">
-
-        <div class="container mx-auto py-8 px-4">
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <div style="gap: 10px;" class="flex">
-                    <div>
-                        <img style="width: 100px;" src="./1094-1727859809.jfif" alt="">
-                    </div>
-                    <div>
-                        <h1 class="text-3xl font-semibold">${nomComplet}</h1>
-                        <p class="text-gray-600 font-semibold text-lg">${titleCv}</p>
-                        <ul style="list-style: none; gap: 30px;" class="list-disc list-inside text-gray-700 flex mt-3">
-                            <li><span class="font-semibold">Email:</span> ${email}</li>
-                            <li><span class="font-semibold">LinkedIn: </span><a href="https://www.linkedin.com/in/johndoe"
-                                    class="text-blue-500 hover:underline">${linkedin}</a></li>
-                            <li><span class="font-semibold">Github:</span> <a href="https://www.johndoe.com" class="text-blue-500 hover:underline">${github}</a>
-                            <li><span class="font-semibold">Telephone:</span> <a href="https://www.johndoe.com" class="text-blue-500 hover:underline">${numero}</a>
-                            </li>
+    if(condition === "classic"){
+        classic.innerHTML=`
+            <div class="bg-gray-100 font-sans">
+                <div class="container mx-auto py-8 px-4">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <div style="gap: 10px;" class="flex">
+                            <div>
+                                <img style="width: 100px;" src="./1094-1727859809.jfif" alt="">
+                            </div>
+                            <div>
+                                <h1 class="text-3xl font-semibold">${nomComplet}</h1>
+                                <p class="text-gray-600 font-semibold text-lg">${titleCv}</p>
+                                <ul style="list-style: none; gap: 30px;" class="list-disc list-inside text-gray-700 flex mt-3">
+                                    <li><span class="font-semibold">Email:</span> ${email}</li>
+                                    <li><span class="font-semibold">LinkedIn: </span><a href="https://www.linkedin.com/in/johndoe"
+                                            class="text-blue-500 hover:underline">${linkedin}</a></li>
+                                    <li><span class="font-semibold">Github:</span> <a href="https://www.johndoe.com" class="text-blue-500 hover:underline">${github}</a>
+                                    <li><span class="font-semibold">Telephone:</span> <a href="https://www.johndoe.com" class="text-blue-500 hover:underline">${numero}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+            
+                        <hr class="my-4">
+            
+                        <h2 class="text-xl font-semibold mb-2">Profile</h2>
+                        <p class="text-gray-700">Experienced web developer with a passion for creating responsive and user-friendly
+                            ${descriptionProfile}
+                        </p>
+                        
+                        <hr class="my-4">
+                        
+                        <h2 class="text-xl font-semibold mt-4 mb-2">Competences</h2>
+                        <div style="width: 9%;" class="border-2 border-top-color my-2"></div>
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li>${competence1}</li>
                         </ul>
+                        <hr class="my-4">
+                        
+
+                        <h2 class="text-xl font-semibold mt-4 mb-2">Projets</h2>
+                        <div style="width: 5%;" class="border-2 w-20 border-top-color my-3"></div>
+                        <div class="mb-4">
+                            <h3 class="font-semibold">${titreProjet1}</h3>
+                            <p class="text-gray-700">${descriptionProjet1}</p>
+                        </div>
+
+
+                        <hr class="my-4">
+
+                        <h2 class="text-xl font-semibold mt-4 mb-2">Experience</h2>
+                        <div style="width: 7%;" class="border-2 w-20 border-top-color my-3"></div>
+                        <div class="mb-4">
+                            <h3 class=" font-semibold">${post1}, ${entreprise1}</h3>
+                            <p class="text-gray-700">
+                            ${type1}
+                            </p>
+                            <p class="text-gray-600">${debutExp1} - ${finExp1} - ${villeExp1}</p>
+                        </div>
+
+                        <hr class="my-4">
+                        
+                        <h2 class="text-xl font-semibold mt-4 mb-2">Education</h2>
+                        <div style="width: 7.1%;" class="border-2 w-20 border-top-color my-3"></div>
+                        <div class="mb-4">
+                            <h3 class="font-semibold">${educationGenerale1}</h3>
+                            <p class="text-gray-700">${lieuEtude1}</p>
+                            <p class="text-gray-600">${debutEtude1} - ${finEtude1} - ${villeEtude1}</p>
+                        </div>
+                        
+                        <hr class="my-4">
+
+                        <h2 class="text-xl font-semibold mt-4 mb-2">Langages</h2>
+                        <div class="border-2 w-20 border-top-color my-3"></div>
+                        <h3 class="font-semibold">${lang1}</h3>
+                        <p class="text-gray-700">${niv1}</p>
                     </div>
                 </div>
-    
-                <hr class="my-4">
-    
-                <h2 class="text-xl font-semibold mb-2">Profile</h2>
-                <p class="text-gray-700">Experienced web developer with a passion for creating responsive and user-friendly
-                    ${descriptionProfile}
-                </p>
-                
-                <hr class="my-4">
-                
-                <h2 class="text-xl font-semibold mt-4 mb-2">Competences</h2>
-                <div style="width: 9%;" class="border-2 border-top-color my-2"></div>
-                <ul class="list-disc list-inside text-gray-700">
-                    <li>${competence1}</li>
-                </ul>
-                <hr class="my-4">
-                
-
-                <h2 class="text-xl font-semibold mt-4 mb-2">Projets</h2>
-                <div style="width: 5%;" class="border-2 w-20 border-top-color my-3"></div>
-                <div class="mb-4">
-                    <h3 class="font-semibold">${titreProjet1}</h3>
-                    <p class="text-gray-700">${descriptionProjet1}</p>
-                </div>
-
-
-                <hr class="my-4">
-
-                <h2 class="text-xl font-semibold mt-4 mb-2">Experience</h2>
-                <div style="width: 7%;" class="border-2 w-20 border-top-color my-3"></div>
-                <div class="mb-4">
-                    <h3 class=" font-semibold">${post1}, ${entreprise1}</h3>
-                    <p class="text-gray-700">
-                    ${type1}
-                    </p>
-                    <p class="text-gray-600">${debutExp1} - ${finExp1} - ${villeExp1}</p>
-                </div>
-
-                <hr class="my-4">
-                
-                <h2 class="text-xl font-semibold mt-4 mb-2">Education</h2>
-                <div style="width: 7.1%;" class="border-2 w-20 border-top-color my-3"></div>
-                <div class="mb-4">
-                    <h3 class="font-semibold">${educationGenerale1}</h3>
-                    <p class="text-gray-700">${lieuEtude1}</p>
-                    <p class="text-gray-600">${debutEtude1} - ${finEtude1} - ${villeEtude1}</p>
-                </div>
-                
-                <hr class="my-4">
-
-                <h2 class="text-xl font-semibold mt-4 mb-2">Langages</h2>
-                <div class="border-2 w-20 border-top-color my-3"></div>
-                <h3 class="font-semibold">${lang1}</h3>
-                <p class="text-gray-700">${niv1}</p>
+            
             </div>
+            `;
+    }else if(condition === "modern"){
+        modern.innerHTML=`
+        <div class="bg-gray-100 p-4">
+            <div class="border-1 shadow-lg shadow-gray-700 rounded-lg">
+                <!-- main content -->
+                <div class="p-5">
+                    
+                    <div class="flex flex-col sm:flex-row sm:mt-10">
+                            
+                        <div class="flex flex-col sm:w-1/3">
+                            <!-- My contact -->
+                            <div style="gap: 10px;" class="flex">
+                                <img style="width: 100px;" src="./1094-1727859809.jfif" alt="">
+                                <div style="margin-top: 20px;">
+                                    <h3 class="font-bold">${nomComplet}</h3>
+                                    <h4 class="">${titleCv}</h4>
+                                </div>
+                            </div>
+                            <div class="py-3 sm:order-none order-3">
+                                <h2 class="text-lg font-poppins font-bold text-top-color">My Contact</h2>
+                                <div class="border-2 w-20 border-top-color my-3"></div>
+        
+                                <div>
+                                    <div class="flex items-center my-1">
+                                        <a class="w-6 text-gray-700 hover:text-orange-600">
+                                            <i class="fab fa-linkedin" style="font-size: 16px;"></i>
+                                        </a>
+                                        <div class="ml-2 truncate">${linkedin}</div>
+                                    </div>
+                                    <div class="flex items-center my-1">
+                                        <a class="w-6 text-gray-700 hover:text-orange-600"
+                                            aria-label="Visit TrendyMinds YouTube" href="" target="_blank">
+                                            <i class="fas fa-phone" style="font-size: 16px;"></i>
+                                        </a>
+                                        <div>${numero}</div>
+                                    </div>
+                                    <div class="flex items-center my-1">
+                                        <a class="w-6 text-gray-700 hover:text-orange-600"
+                                            aria-label="Visit TrendyMinds Facebook" href="" target="_blank">
+                                            <i class="fas fa-envelope"></i>
+                                        </a>
+                                        <div>${email}</div>
+                                    </div>
+                                    <div class="flex items-center my-1">
+                                        <a class="w-6 text-gray-700 hover:text-orange-600"
+                                            aria-label="Visit TrendyMinds Twitter" href="" target="_blank">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                        <div>${github}</div>
+                                    </div>
+        
+                                </div>
+                            </div>
+                            <!-- Skills -->
+                            <div class="py-3 sm:order-none order-2">
+                                <h2 class="text-lg font-poppins font-bold text-top-color">Skills</h2>
+                                <div class="border-2 w-20 border-top-color my-3"></div>
+        
+                                <div>
+                                    <div class="flex items-center my-1">
+                                        <a class="w-6 text-gray-700 hover:text-orange-600">
+                                            <i class="fas fa-circle"></i>
+                                        </a>
+                                        <div class="ml-2">${competence1}</div>
+                                    </div>
+                                    <div class="flex items-center my-1">
+                                        <a class="w-6 text-gray-700 hover:text-orange-600"
+                                            aria-label="Visit TrendyMinds YouTube" href="" target="_blank">
+                                            <i class="fas fa-circle"></i>
+                                        </a>
+                                        <div class="ml-2">${competence1}</div>
+                                    </div>
+                                    <div class="flex items-center my-1">
+                                        <a class="w-6 text-gray-700 hover:text-orange-600"
+                                            aria-label="Visit TrendyMinds Facebook" href="" target="_blank">
+                                            <i class="fas fa-circle"></i>
+                                        </a>
+                                        <div class="ml-2">${competence1}</div>
+                                    </div>
+                                    <div class="flex items-center my-1">
+                                        <a class="w-6 text-gray-700 hover:text-orange-600"
+                                            aria-label="Visit TrendyMinds Twitter" href="" target="_blank">
+                                            <i class="fas fa-circle"></i>
+                                        </a>
+                                        <div class="ml-2">${competence1}</div>
+                                    </div>
+        
+                                </div>
+                            </div>
+                            <!-- Education Background -->
+                            <div class="py-3 sm:order-none order-1">
+                                <h2 class="text-lg font-poppins font-bold text-top-color">Education Background</h2>
+                                <div class="border-2 w-20 border-top-color my-3"></div>
+        
+                                <div class="flex flex-col space-y-1">
+        
+                                    <div class="flex flex-col">
+                                        <p class="font-semibold text-xs text-gray-700">${debutEtude1} - ${finEtude1},${villeEtude1}</p>
+                                        <p class="text-sm font-medium">
+                                            ${educationGenerale1}
+                                        </p>
+                                        <p class="font-bold text-xs text-gray-700 mb-2">${lieuEtude1}</p>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <p class="font-semibold text-xs text-gray-700">2017</p>
+                                        <p class="text-sm font-medium"><span class="text-green-700">HSC</span>, RAJARSHI SHAHU
+                                            COLLEGE, LATUR.</p>
+                                        <p class="font-bold text-xs text-gray-700 mb-2">Percentage: 80.77</p>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+        
+        
+                        <div class="flex flex-col sm:w-2/3 order-first sm:order-none sm:-mt-10">
+        
+                            <!-- About me -->
+                            <div class="py-3">
+                                <h2 class="text-lg font-poppins font-bold text-top-color">About Me</h2>
+                                <div class="border-2 w-20 border-top-color my-3"></div>
+                                <p>
+                                    ${descriptionProfile}
+                                </p>
+                            </div>
+                            <!-- Professional Experience -->
+                            <div class="py-3">
+                                <h2 class="text-lg font-poppins font-bold text-top-color">Professional Experience</h2>
+                                <div class="border-2 w-20 border-top-color my-3"></div>
+        
+                                <div class="flex flex-col">
+        
+                                    <div class="flex flex-col">
+                                        <p class="text-lg font-bold text-gray-700">${post1} | ${entreprise1}</p>
+                                        <p class="font-semibold text-sm text-gray-700">${debutExp1} - ${finExp1},${villeExp1}</p>
+                                        <p class="font-semibold text-sm text-gray-700 mt-2 mb-1">${type1}</p>
+                                    </div>
+        
+                                </div>
+        
+                            </div>
+        
+                            <!-- Projects -->
+                            <div class="py-3">
+                                <h2 class="text-lg font-poppins font-bold text-top-color">Projects</h2>
+                                <div class="border-2 w-20 border-top-color my-3"></div>
+        
+                                <div class="flex flex-col">
+        
+                                    <div class="flex flex-col">
+                                        <p class="text-lg font-semibold text-gray-700">${titreProjet1}</p>
+                                        <p class="font-normal text-sm text-gray-700 mb-1 pl-2">
+                                            ${descriptionProjet1}
+                                        </p>
+                                    </div>
+                                </div>
+        
+                            </div>
+                            
+                            <!-- Langues -->
+                            <div class="py-3">
+                                <h2 class="text-lg font-poppins font-bold text-top-color">Langages</h2>
+                                <div class="border-2 w-20 border-top-color my-3"></div>
+        
+                                <div class="flex flex-col">
+        
+                                    <div class="flex flex-col">
+                                        <p class="text-lg font-semibold text-gray-700">${lang1}</p>
+                                        <p class="font-normal text-sm text-gray-700 mb-1 pl-2">${niv1}</p>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <p class="text-lg font-semibold text-gray-700">${lang1}</p>
+                                        <p class="font-normal text-sm text-gray-700 mb-1 pl-2">${niv1}</p>
+                                    </div>
+        
+                                </div>
+        
+                            </div>
+        
+                        </div>
+                    </div>
+        
+                </div>
+        
+            </div>
+        
         </div>
-    
-    </div>
-    `;
-
-
-    // console.log('-------------------------------information')
-    // console.log(nomComplet)
-    // console.log(email )
-    // console.log(titleCv)
-    // console.log(linkedin)
-    // console.log(github)
-    // console.log(numero)
-    // console.log('-----------------------------------profile')
-    // console.log(descriptionProfile)
-    // console.log('----------------------------------competence')
-    // console.log(competence1)
-    // console.log('-----------------------------------experience')
-    // console.log(post1)
-    // console.log(entreprise1)
-    // console.log(type1)
-    // console.log(villeExp1)
-    // console.log(debutExp1)
-    // console.log(finExp1)
-    // console.log('-----------------------------------------projet')
-    // console.log(titreProjet1)
-    // console.log(descriptionProjet1)
-    // console.log('-----------------------------------------Education')
-    // console.log(educationGenerale1)
-    // console.log(lieuEtude1)
-    // console.log(villeEtude1)
-    // console.log(debutEtude1)
-    // console.log(finEtude1)
-    // console.log('-----------------------------------------Langues')
-    // console.log(lang1)
-    // console.log(niv1)
-    
+        `;
+    }   
 }
 
   
