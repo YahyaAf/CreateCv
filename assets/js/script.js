@@ -28,7 +28,10 @@ const Next = () => {
     forms[counterForm].classList.remove("hidden");
     steppers[counterForm].classList.add("bg-gray-900", "text-white");
     steppers[counterForm].classList.remove("bg-gray-300", "text-gray-900");
+  }else{
+        document.getElementById('save').classList.remove("hidden");
   }
+  
 };
 
 const Back = () => {
@@ -36,10 +39,12 @@ const Back = () => {
     forms[counterForm].classList.add("hidden");
     steppers[counterForm].classList.remove("bg-gray-900", "text-white");
     steppers[counterForm].classList.add("bg-gray-300", "text-gray-900");
+    document.getElementById('save').classList.add("hidden");
     counterForm--;
     forms[counterForm].classList.remove("hidden");
     steppers[counterForm].classList.add("bg-gray-900", "text-white");
     steppers[counterForm].classList.remove("bg-gray-300", "text-gray-900");
+    document.getElementById('save').classList.add("hidden");
   }
 };
 
@@ -341,16 +346,23 @@ const Save = (event) => {
 
         <div class="container mx-auto py-8 px-4">
             <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h1 class="text-3xl font-semibold">${nomComplet}</h1>
-                <p class="text-gray-600 font-semibold text-lg">${titleCv}</p>
-                <ul style="list-style: none; gap: 30px;" class="list-disc list-inside text-gray-700 flex mt-3">
-                    <li><span class="font-semibold">Email:</span> ${email}</li>
-                    <li><span class="font-semibold">LinkedIn: </span><a href="https://www.linkedin.com/in/johndoe"
-                            class="text-blue-500 hover:underline">${linkedin}</a></li>
-                    <li><span class="font-semibold">Github:</span> <a href="https://www.johndoe.com" class="text-blue-500 hover:underline">${github}</a>
-                    <li><span class="font-semibold">Telephone:</span> <a href="https://www.johndoe.com" class="text-blue-500 hover:underline">${numero}</a>
-                    </li>
-                </ul>
+                <div style="gap: 10px;" class="flex">
+                    <div>
+                        <img style="width: 100px;" src="./1094-1727859809.jfif" alt="">
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-semibold">${nomComplet}</h1>
+                        <p class="text-gray-600 font-semibold text-lg">${titleCv}</p>
+                        <ul style="list-style: none; gap: 30px;" class="list-disc list-inside text-gray-700 flex mt-3">
+                            <li><span class="font-semibold">Email:</span> ${email}</li>
+                            <li><span class="font-semibold">LinkedIn: </span><a href="https://www.linkedin.com/in/johndoe"
+                                    class="text-blue-500 hover:underline">${linkedin}</a></li>
+                            <li><span class="font-semibold">Github:</span> <a href="https://www.johndoe.com" class="text-blue-500 hover:underline">${github}</a>
+                            <li><span class="font-semibold">Telephone:</span> <a href="https://www.johndoe.com" class="text-blue-500 hover:underline">${numero}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
     
                 <hr class="my-4">
     
