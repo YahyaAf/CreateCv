@@ -95,6 +95,26 @@ const DeleteFormLangague = (button) => {
   formContainer.remove();
 };
 
+const getLangueValues = () => {
+    const languesValues = [];
+    const parentLang = document.querySelectorAll("#parent-lang > .w-full");
+  
+    parentLang.forEach((container) => {
+      const langInput = container.querySelector("input[id^='lang']");
+      const nivSelect = container.querySelector("select[id^='niv']");
+  
+      if (langInput && nivSelect) {
+        languesValues.push({
+          lang: langInput.value,
+          niv: nivSelect.value
+        });
+      }
+    });
+  
+    console.log(languesValues);
+    return languesValues;
+  };
+
 // dynamique form competence
 let formCompetenceCounter = 2;
 const AddFormCompetence = (event) => {
@@ -120,6 +140,11 @@ const AddFormCompetence = (event) => {
   formCompetenceCounter++;
 };
 
+const DeleteFormCompetence = (button) => {
+  const formContainer = button.parentElement;
+  formContainer.remove();
+};
+
 const getCompetenceValues = () => {
     const competenceValues = [];
     const inputs = document.querySelectorAll("#parent-compt input[id^='competence']");
@@ -127,15 +152,7 @@ const getCompetenceValues = () => {
     inputs.forEach((input) => {
       competenceValues.push(input.value);
     });
-  
-    console.log(competenceValues); // Check stored values
-    return competenceValues; // Return the array if needed
-  };
-
-
-const DeleteFormCompetence = (button) => {
-  const formContainer = button.parentElement;
-  formContainer.remove();
+    return competenceValues; 
 };
 
 // dynamique form experience
@@ -337,7 +354,8 @@ const Save = (event) => {
     // profile
         let descriptionProfile = document.getElementById('descriptionProfile').value;
     // competence
-        let competence1 = document.getElementById('competence1').value
+        let compDyn= getCompetenceValues();
+        let afficheDynamiqueCompetence = compDyn.map(e => `<li>${e}</li>`).join("");
     // experience
         let post1 = document.getElementById('post1').value
         let entreprise1 = document.getElementById('entreprise1').value
@@ -355,26 +373,15 @@ const Save = (event) => {
         let debutEtude1 = document.getElementById('debutEtude1').value
         let finEtude1 = document.getElementById('finEtude1').value
     // Langues
-        let lang1 = document.getElementById('lang1').value
-        let niv1 = document.getElementById('niv1').value
+        let langueDyn = getLangueValues()
+        let afficheDynamiqueLangues = langueDyn.map(e => `
+            <h3 class="font-semibold">${e.lang}</h3>
+            <p class="text-gray-700">${e.niv}</p>
+        `).join("");
     // condition
         let condition = showValue();
     // image
-    const imgInput = document.getElementById('imgCv');
-    let imageURL = '';
-    if (imgInput.files && imgInput.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            imageURL = e.target.result;
-        };
-        reader.readAsDataURL(imgInput.files[0]);
-    }
-    console.log(imageURL)
-    // competenceDynamique
-    let compDyn= getCompetenceValues();
-    let afficheDynamiqueCompetence = compDyn.map(e => `<li>${e}</li>`).join("");
-
-   
+    
 
     let classic = document.getElementById('classic');
     let modern = document.getElementById('modern');
@@ -391,7 +398,7 @@ const Save = (event) => {
                     <div class="bg-white p-6 rounded-lg shadow-lg">
                         <div style="gap: 10px;" class="flex">
                             <div>
-                                <img id="imageClassic" src="${imageURL}" alt="Image Preview" style="width: 200px; height: auto;">
+                                <img id="imageClassic" src="" alt="Image Preview" style="width: 200px; height: auto;">
                             </div>
                             <div>
                                 <h1 class="text-3xl font-semibold">${nomComplet}</h1>
@@ -458,8 +465,7 @@ const Save = (event) => {
 
                         <h2 class="text-xl font-semibold mt-4 mb-2">Langages</h2>
                         <div class="border-2 w-20 border-top-color my-3"></div>
-                        <h3 class="font-semibold">${lang1}</h3>
-                        <p class="text-gray-700">${niv1}</p>
+                        ${afficheDynamiqueLangues}
                     </div>
                 </div>
             
@@ -629,6 +635,7 @@ const Save = (event) => {
                                 <h2 class="text-lg font-poppins font-bold text-top-color">Langages</h2>
                                 <div class="border-2 w-20 border-top-color my-3"></div>
         
+
                                 <div class="flex flex-col">
         
                                     <div class="flex flex-col">
