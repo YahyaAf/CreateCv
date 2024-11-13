@@ -228,6 +228,32 @@ const DeleteFormExperience = (button) => {
     formContainer.remove();
 };
 
+const getExperienceValues = () => {
+    const ExperienceValues = [];
+    const parentExperience = document.querySelectorAll("#parent-exp > .w-full");
+  
+    parentExperience.forEach((container) => {
+      const titlePost = container.querySelector("input[id^='post']");
+      const nomEntreprise = container.querySelector("input[id^='entreprise']");
+      const typeExp = container.querySelector("input[id^='type']");
+      const villeExp = container.querySelector("input[id^='villeExp']");
+      const debutExp = container.querySelector("input[id^='debutExp']");
+      const finExp = container.querySelector("input[id^='finExp']");
+  
+      if (titlePost && nomEntreprise && typeExp && villeExp && debutExp && finExp) {
+        ExperienceValues.push({
+          post: titlePost.value,
+          entreprise: nomEntreprise.value,
+          type: typeExp.value,
+          ville: villeExp.value,
+          debut: debutExp.value,
+          fin: finExp.value,
+        });
+      }
+    });
+    return ExperienceValues;
+};
+
 
 // dynamique form projet
 let formProjetCounter = 2;
@@ -408,6 +434,16 @@ const Save = (event) => {
         let villeExp1 = document.getElementById('villeExp1').value
         let debutExp1 = document.getElementById('debutExp1').value
         let finExp1 = document.getElementById('finExp1').value
+        let experienceDyn = getExperienceValues()
+        let afficheDynamiqueExperience = experienceDyn.map(e => `
+            <div class="mb-4">
+                <h3 class=" font-semibold">${e.post}, ${e.entreprise}</h3>
+                <p class="text-gray-700">
+                    ${e.type}
+                </p>
+                <p class="text-gray-600">${e.debut} - ${e.fin} - ${e.ville}</p>
+            </div>
+       `).join("");
     // projet
         let projetDyn = getProjetValues();
         let afficheDynamiqueProjets = projetDyn.map(e=>`
@@ -505,6 +541,7 @@ const Save = (event) => {
                             </p>
                             <p class="text-gray-600">${debutExp1} - ${finExp1} - ${villeExp1}</p>
                         </div>
+                        ${afficheDynamiqueExperience}
 
                         <hr class="my-4">
                         
