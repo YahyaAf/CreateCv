@@ -119,6 +119,20 @@ const AddFormCompetence = (event) => {
   document.getElementById("parent-compt").appendChild(formContainer);
   formCompetenceCounter++;
 };
+
+const getCompetenceValues = () => {
+    const competenceValues = [];
+    const inputs = document.querySelectorAll("#parent-compt input[id^='competence']");
+    
+    inputs.forEach((input) => {
+      competenceValues.push(input.value);
+    });
+  
+    console.log(competenceValues); // Check stored values
+    return competenceValues; // Return the array if needed
+  };
+
+
 const DeleteFormCompetence = (button) => {
   const formContainer = button.parentElement;
   formContainer.remove();
@@ -310,7 +324,6 @@ const showValue = () => {
     return selectedRate ? selectedRate.value : null;
 }
 
-
 // Save data dans le Cv
 const Save = (event) => {
     event.preventDefault();
@@ -346,9 +359,30 @@ const Save = (event) => {
         let niv1 = document.getElementById('niv1').value
     // condition
         let condition = showValue();
+    // image
+    const imgInput = document.getElementById('imgCv');
+    let imageURL = '';
+    if (imgInput.files && imgInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            imageURL = e.target.result;
+        };
+        reader.readAsDataURL(imgInput.files[0]);
+    }
+    console.log(imageURL)
+    // competenceDynamique
+    let compDyn= getCompetenceValues();
+    let afficheDynamiqueCompetence = compDyn.map(e => `<li>${e}</li>`).join("");
 
-    let classic = document.getElementById('classic')
-    let modern = document.getElementById('modern')
+   
+
+    let classic = document.getElementById('classic');
+    let modern = document.getElementById('modern');
+    let parentStep = document.getElementById('parent-step');
+    let parentSection = document.getElementById('parent-section');
+
+    parentStep.classList.add("hidden");
+    parentSection.classList.add("hidden");
 
     if(condition === "classic"){
         classic.innerHTML=`
@@ -357,7 +391,7 @@ const Save = (event) => {
                     <div class="bg-white p-6 rounded-lg shadow-lg">
                         <div style="gap: 10px;" class="flex">
                             <div>
-                                <img style="width: 100px;" src="./1094-1727859809.jfif" alt="">
+                                <img id="imageClassic" src="${imageURL}" alt="Image Preview" style="width: 200px; height: auto;">
                             </div>
                             <div>
                                 <h1 class="text-3xl font-semibold">${nomComplet}</h1>
@@ -385,7 +419,7 @@ const Save = (event) => {
                         <h2 class="text-xl font-semibold mt-4 mb-2">Competences</h2>
                         <div style="width: 9%;" class="border-2 border-top-color my-2"></div>
                         <ul class="list-disc list-inside text-gray-700">
-                            <li>${competence1}</li>
+                            ${afficheDynamiqueCompetence}
                         </ul>
                         <hr class="my-4">
                         
