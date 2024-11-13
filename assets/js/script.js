@@ -113,7 +113,7 @@ const getLangueValues = () => {
   
     console.log(languesValues);
     return languesValues;
-  };
+};
 
 // dynamique form competence
 let formCompetenceCounter = 2;
@@ -269,6 +269,26 @@ const DeleteFormProjet = (button) => {
     formContainer.remove();
 };
 
+const getProjetValues = () => {
+    const ProjetValues = [];
+    const parentLang = document.querySelectorAll("#parent-projet > .w-full");
+  
+    parentLang.forEach((container) => {
+      const projetInput = container.querySelector("input[id^='titreProjet']");
+      const descriptionProjet = container.querySelector("textarea[id^='descriptionProjet']");
+  
+      if (projetInput && descriptionProjet) {
+        ProjetValues.push({
+          projet: projetInput.value,
+          description: descriptionProjet.value
+        });
+      }
+    });
+  
+    console.log(ProjetValues);
+    return ProjetValues;
+};
+
 // dynamique form education
 let formEducationCounter = 2;
 const AddFormEducation = (event) => {
@@ -335,6 +355,31 @@ const DeleteFormEducation = (button) => {
     formContainer.remove();
 };
 
+const getEducationValues = () => {
+    const EducationValues = [];
+    const parentEducation = document.querySelectorAll("#parent-education > .w-full");
+  
+    parentEducation.forEach((container) => {
+      const educationGene = container.querySelector("input[id^='educationGenerale']");
+      const etudeLieu = container.querySelector("input[id^='lieuEtude']");
+      const villeEtude = container.querySelector("input[id^='villeEtude']");
+      const debutEtude = container.querySelector("input[id^='debutEtude']");
+      const finEtude = container.querySelector("input[id^='finEtude']");
+  
+      if (educationGene && etudeLieu && villeEtude && debutEtude && finEtude) {
+        EducationValues.push({
+          etude: educationGene.value,
+          lieu: etudeLieu.value,
+          ville: villeEtude.value,
+          debut: debutEtude.value,
+          fin: finEtude.value,
+        });
+      }
+    });
+  
+    return EducationValues;
+};
+
 // show value of radio
 const showValue = () => {
     var selectedRate = document.querySelector('input[name="rate"]:checked');
@@ -364,14 +409,25 @@ const Save = (event) => {
         let debutExp1 = document.getElementById('debutExp1').value
         let finExp1 = document.getElementById('finExp1').value
     // projet
-        let titreProjet1 = document.getElementById('titreProjet1').value
-        let descriptionProjet1 = document.getElementById('descriptionProjet1').value
+        let projetDyn = getProjetValues();
+        let afficheDynamiqueProjets = projetDyn.map(e=>`
+                <h3 class="font-semibold">${e.projet}</h3>
+                <p class="text-gray-700">${e.description}</p>
+            `).join("")
     // Education
         let educationGenerale1 = document.getElementById('educationGenerale1').value
         let lieuEtude1 = document.getElementById('lieuEtude1').value
         let villeEtude1 = document.getElementById('villeEtude1').value
         let debutEtude1 = document.getElementById('debutEtude1').value
         let finEtude1 = document.getElementById('finEtude1').value
+        let educationDyn = getEducationValues()
+        let afficheDynamiqueEducations = educationDyn.map(e => `
+            <div class="mb-4">
+               <h3 class="font-semibold">${e.etude}</h3>
+               <p class="text-gray-700">${e.lieu}</p>
+               <p class="text-gray-600">${e.debut} - ${e.fin} - ${e.ville}</p>
+           </div>
+       `).join("");
     // Langues
         let langueDyn = getLangueValues()
         let afficheDynamiqueLangues = langueDyn.map(e => `
@@ -434,8 +490,7 @@ const Save = (event) => {
                         <h2 class="text-xl font-semibold mt-4 mb-2">Projets</h2>
                         <div style="width: 5%;" class="border-2 w-20 border-top-color my-3"></div>
                         <div class="mb-4">
-                            <h3 class="font-semibold">${titreProjet1}</h3>
-                            <p class="text-gray-700">${descriptionProjet1}</p>
+                            ${afficheDynamiqueProjets}
                         </div>
 
 
@@ -460,6 +515,7 @@ const Save = (event) => {
                             <p class="text-gray-700">${lieuEtude1}</p>
                             <p class="text-gray-600">${debutEtude1} - ${finEtude1} - ${villeEtude1}</p>
                         </div>
+                        ${afficheDynamiqueEducations}
                         
                         <hr class="my-4">
 
