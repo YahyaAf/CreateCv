@@ -623,34 +623,15 @@ const Save = (event) => {
                                 <div class="border-2 w-20 border-top-color my-3"></div>
         
                                 <div>
-                                    <div class="flex items-center my-1">
+                                    
+                                    ${compDyn.map(e => `
+                                        <div class="flex items-center my-1">
                                         <a class="w-6 text-gray-700 hover:text-orange-600">
                                             <i class="fas fa-circle"></i>
                                         </a>
-                                        <div class="ml-2">${competence1}</div>
-                                    </div>
-                                    <div class="flex items-center my-1">
-                                        <a class="w-6 text-gray-700 hover:text-orange-600"
-                                            aria-label="Visit TrendyMinds YouTube" href="" target="_blank">
-                                            <i class="fas fa-circle"></i>
-                                        </a>
-                                        <div class="ml-2">${competence1}</div>
-                                    </div>
-                                    <div class="flex items-center my-1">
-                                        <a class="w-6 text-gray-700 hover:text-orange-600"
-                                            aria-label="Visit TrendyMinds Facebook" href="" target="_blank">
-                                            <i class="fas fa-circle"></i>
-                                        </a>
-                                        <div class="ml-2">${competence1}</div>
-                                    </div>
-                                    <div class="flex items-center my-1">
-                                        <a class="w-6 text-gray-700 hover:text-orange-600"
-                                            aria-label="Visit TrendyMinds Twitter" href="" target="_blank">
-                                            <i class="fas fa-circle"></i>
-                                        </a>
-                                        <div class="ml-2">${competence1}</div>
-                                    </div>
-        
+                                        <div class="ml-2">${e}</div>
+                                        </div>`).join("")
+                                    }
                                 </div>
                             </div>
                             <!-- Education Background -->
@@ -667,12 +648,16 @@ const Save = (event) => {
                                         </p>
                                         <p class="font-bold text-xs text-gray-700 mb-2">${lieuEtude1}</p>
                                     </div>
-                                    <div class="flex flex-col">
-                                        <p class="font-semibold text-xs text-gray-700">2017</p>
-                                        <p class="text-sm font-medium"><span class="text-green-700">HSC</span>, RAJARSHI SHAHU
-                                            COLLEGE, LATUR.</p>
-                                        <p class="font-bold text-xs text-gray-700 mb-2">Percentage: 80.77</p>
-                                    </div>
+                                    ${educationDyn.map(e => `
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-xs text-gray-700">${e.debut} - ${e.fin},${e.ville}</p>
+                                            <p class="text-sm font-medium">
+                                                ${e.etude}
+                                            </p>
+                                            <p class="font-bold text-xs text-gray-700 mb-2">${e.lieu}</p>
+                                        </div>
+                                   `).join("")}
+                                   
                                 </div>
                             </div>
         
@@ -701,6 +686,13 @@ const Save = (event) => {
                                         <p class="font-semibold text-sm text-gray-700">${debutExp1} - ${finExp1},${villeExp1}</p>
                                         <p class="font-semibold text-sm text-gray-700 mt-2 mb-1">${type1}</p>
                                     </div>
+                                    ${experienceDyn.map(e => `
+                                        <div class="flex flex-col">
+                                            <p class="text-lg font-bold text-gray-700">${e.post} | ${e.entreprise}</p>
+                                            <p class="font-semibold text-sm text-gray-700">${e.debut} - ${e.fin},${e.ville}</p>
+                                            <p class="font-semibold text-sm text-gray-700 mt-2 mb-1">${e.type}</p>
+                                        </div>
+                                   `).join("")}
         
                                 </div>
         
@@ -712,13 +704,14 @@ const Save = (event) => {
                                 <div class="border-2 w-20 border-top-color my-3"></div>
         
                                 <div class="flex flex-col">
-        
-                                    <div class="flex flex-col">
-                                        <p class="text-lg font-semibold text-gray-700">${titreProjet1}</p>
-                                        <p class="font-normal text-sm text-gray-700 mb-1 pl-2">
-                                            ${descriptionProjet1}
-                                        </p>
-                                    </div>
+                                    ${projetDyn.map(e=>`
+                                        <div class="flex flex-col">
+                                            <p class="text-lg font-semibold text-gray-700">${e.projet}</p>
+                                            <p class="font-normal text-sm text-gray-700 mb-1 pl-2">
+                                                ${e.description}
+                                            </p>
+                                        </div>
+                                    `).join("")}    
                                 </div>
         
                             </div>
@@ -730,15 +723,11 @@ const Save = (event) => {
         
 
                                 <div class="flex flex-col">
-        
-                                    <div class="flex flex-col">
-                                        <p class="text-lg font-semibold text-gray-700">${lang1}</p>
-                                        <p class="font-normal text-sm text-gray-700 mb-1 pl-2">${niv1}</p>
-                                    </div>
-                                    <div class="flex flex-col">
-                                        <p class="text-lg font-semibold text-gray-700">${lang1}</p>
-                                        <p class="font-normal text-sm text-gray-700 mb-1 pl-2">${niv1}</p>
-                                    </div>
+                                    ${langueDyn.map(e => `
+                                        <p class="text-lg font-semibold text-gray-700">${e.lang}</p>
+                                        <p class="font-normal text-sm text-gray-700 mb-1 pl-2">${e.niv}</p>
+                                    `).join("")}
+                                   
         
                                 </div>
         
