@@ -111,7 +111,6 @@ const getLangueValues = () => {
       }
     });
   
-    console.log(languesValues);
     return languesValues;
 };
 
@@ -310,8 +309,7 @@ const getProjetValues = () => {
         });
       }
     });
-  
-    console.log(ProjetValues);
+
     return ProjetValues;
 };
 
@@ -473,6 +471,8 @@ const Save = (event) => {
     // condition
         let condition = showValue();
     // image
+    let inputPhotosUrl = document.querySelector("#imgCv").files[0];
+    inputPhoto = URL.createObjectURL(inputPhotosUrl);
     
 
     let classic = document.getElementById('classic');
@@ -490,7 +490,7 @@ const Save = (event) => {
                     <div class="bg-white p-6 rounded-lg shadow-lg">
                         <div style="gap: 10px;" class="flex">
                             <div>
-                                <img id="imageClassic" src="" alt="Image Preview" style="width: 200px; height: auto;">
+                                <img id="imageClassic" src="${inputPhoto}" alt="Image Preview" style="width: 100px;" height: auto;">
                             </div>
                             <div>
                                 <h1 class="text-3xl font-semibold">${nomComplet}</h1>
@@ -744,5 +744,6 @@ const Save = (event) => {
         `;
     }   
 }
+
 
   
