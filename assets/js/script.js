@@ -482,6 +482,15 @@ const Save = (event) => {
 
     parentStep.classList.add("hidden");
     parentSection.classList.add("hidden");
+    
+    if(condition === "classic"){
+        document.getElementById('btndwlond').classList.remove("hidden");
+        document.getElementById('btndwlond').classList.add("flex");
+    }else if(condition === "modern"){
+        document.getElementById('btndwlondModern').classList.remove("hidden");
+        document.getElementById('btndwlondModern').classList.add("flex");
+    }
+    
 
     if(condition === "classic"){
         classic.innerHTML=`
@@ -576,7 +585,7 @@ const Save = (event) => {
                         <div class="flex flex-col sm:w-1/3">
                             <!-- My contact -->
                             <div style="gap: 10px;" class="flex">
-                                <img style="width: 100px;" src="./1094-1727859809.jfif" alt="">
+                                <img style="width: 100px;" src="${inputPhoto}" alt="">
                                 <div style="margin-top: 20px;">
                                     <h3 class="font-bold">${nomComplet}</h3>
                                     <h4 class="">${titleCv}</h4>
@@ -746,4 +755,46 @@ const Save = (event) => {
 }
 
 
+// doawnload Cv 
+let Cv1 = document.getElementById('classic');
+let Cv2 = document.getElementById('modern');
+
+let btndwlond = document.getElementById('btndwlond');
+let btndwlondModern = document.getElementById('btndwlondModern');
+
+
+btndwlond.addEventListener("click", async function () {
+
+    const filename = "my-cv.pdf";
   
+    const options = {
+      margin: 0,
+      filename: filename,
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 4 },
+      jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+    };
+    try {
+      await html2pdf().set(options).from(Cv1).save();
+    } catch (error) {
+      console.error("false:", error.message);
+    }
+});
+
+btndwlondModern.addEventListener("click", async function () {
+
+    const filename = "my-cv.pdf";
+  
+    const options = {
+      margin: 0,
+      filename: filename,
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 4 },
+      jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+    };
+    try {
+      await html2pdf().set(options).from(Cv2).save();
+    } catch (error) {
+      console.error("false:", error.message);
+    }
+});
