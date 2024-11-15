@@ -420,6 +420,15 @@ const Validation = () => {
     let descriptionProfile = document.getElementById('descriptionProfile');
     // condition
     let conditionRadio = showValue();
+    // comptence
+    const competences = document.querySelectorAll('#competence');
+    // experience
+    let post1 = document.querySelectorAll('#post')
+    let entreprise1 = document.querySelectorAll('#entreprise')
+    let type1 = document.querySelectorAll('#type')
+    let villeExp1 = document.querySelectorAll('#villeExp')
+    let debutExp1 = document.querySelectorAll('#debutExp')
+    let finExp1 = document.querySelectorAll('#finExp')
 
     if (nomComplet.value.trim() === '' || nomComplet.value.length > 100) {
         nomComplet.style.border = '2px solid red';
@@ -464,6 +473,69 @@ const Validation = () => {
         alert("No validation Verifier All the fomulaire")
         condition = false;
     }
+    competences.forEach(input => {
+        if (input.value.trim() === '') {
+            input.style.border = '2px solid red';  
+            condition = false;
+        } else {
+            input.style.border = '2px solid green';
+        }
+    });
+
+
+    post1.forEach(input => {
+        if (input.value.trim() === '') {
+            input.style.border = '2px solid red'; 
+            condition = false;
+        } else {
+            input.style.border = '2px solid green'; 
+        }
+    });
+
+    entreprise1.forEach(input => {
+        if (input.value.trim() === '') {
+            input.style.border = '2px solid red';
+            condition = false;
+        } else {
+            input.style.border = '2px solid green';
+        }
+    });
+
+    type1.forEach(input => {
+        if (input.value.trim() === '') {
+            input.style.border = '2px solid red';
+            condition = false;
+        } else {
+            input.style.border = '2px solid green';
+        }
+    });
+
+    villeExp1.forEach(input => {
+        if (input.value.trim() === '') {
+            input.style.border = '2px solid red';
+            condition = false;
+        } else {
+            input.style.border = '2px solid green';
+        }
+    });
+
+    debutExp1.forEach(input => {
+        if (input.value.trim() === '') {
+            input.style.border = '2px solid red';
+            condition = false;
+        } else {
+            input.style.border = '2px solid green';
+        }
+    });
+
+    finExp1.forEach(input => {
+        if (input.value.trim() === '') {
+            input.style.border = '2px solid red';
+            condition = false;
+        } else {
+            input.style.border = '2px solid green';
+        }
+    });
 
     return condition; 
 
