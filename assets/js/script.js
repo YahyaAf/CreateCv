@@ -169,7 +169,7 @@ const AddFormExperience = (event) => {
                     <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                         Titre du Poste
                     </label>
-                    <input id="post${formExperienceCounter}" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre titre de poste">
+                    <input id="post" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre titre de poste">
                 </div>
             </div>
             <div class="w-full lg:w-12/12 px-4">
@@ -177,7 +177,7 @@ const AddFormExperience = (event) => {
                     <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                         Entreprise
                     </label>
-                    <input id="entreprise${formExperienceCounter}" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Nom d'Entreprise">
+                    <input id="entreprise" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Nom d'Entreprise">
                 </div>
             </div>
             <div class="w-full lg:w-12/12 px-4">
@@ -185,7 +185,7 @@ const AddFormExperience = (event) => {
                     <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                         Type d'Expérience
                     </label>
-                    <input id="type${formExperienceCounter}" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre type d'expérience">
+                    <input id="type" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre type d'expérience">
                 </div>
             </div>
             <div class="w-full lg:w-4/12 px-4">
@@ -193,7 +193,7 @@ const AddFormExperience = (event) => {
                     <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                         Ville
                     </label>
-                    <input id="villeExp${formExperienceCounter}" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre ville">
+                    <input id="villeExp" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre ville">
                 </div>
             </div>
             <div class="w-full lg:w-4/12 px-4">
@@ -201,7 +201,7 @@ const AddFormExperience = (event) => {
                     <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                         Date d'Ebut
                     </label>
-                    <input id="debutExp${formExperienceCounter}" type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                    <input id="debutExp" type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                 </div>
             </div>
             <div class="w-full lg:w-4/12 px-4">
@@ -209,7 +209,7 @@ const AddFormExperience = (event) => {
                     <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                         Date Fin
                     </label>
-                    <input id="finExp${formExperienceCounter}" type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                    <input id="finExp" type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                 </div>
             </div>
         </div>
@@ -493,12 +493,12 @@ const Save = (event) => {
         let compDyn= getCompetenceValues();
         let afficheDynamiqueCompetence = compDyn.map(e => `<li>${e}</li>`).join("");
     // experience
-        let post1 = document.getElementById('post1').value
-        let entreprise1 = document.getElementById('entreprise1').value
-        let type1 = document.getElementById('type1').value
-        let villeExp1 = document.getElementById('villeExp1').value
-        let debutExp1 = document.getElementById('debutExp1').value
-        let finExp1 = document.getElementById('finExp1').value
+        let post1 = document.getElementById('post').value
+        let entreprise1 = document.getElementById('entreprise').value
+        let type1 = document.getElementById('type').value
+        let villeExp1 = document.getElementById('villeExp').value
+        let debutExp1 = document.getElementById('debutExp').value
+        let finExp1 = document.getElementById('finExp').value
         let experienceDyn = getExperienceValues()
         let afficheDynamiqueExperience = experienceDyn.map(e => `
             <div class="mb-4">
