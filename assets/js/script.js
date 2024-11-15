@@ -30,6 +30,7 @@ const Next = () => {
         steppers[counterForm].classList.remove("bg-gray-300", "text-gray-900");
     }else{
         document.getElementById('save').classList.remove("hidden");
+        document.getElementById('showValidation').classList.add("hidden");
     }
 };
 
@@ -429,7 +430,23 @@ const Validation = () => {
     let villeExp1 = document.querySelectorAll('#villeExp')
     let debutExp1 = document.querySelectorAll('#debutExp')
     let finExp1 = document.querySelectorAll('#finExp')
+    // education
+    let educationGenerale1 = document.querySelectorAll('#educationGenerale')
+    let lieuEtude1 = document.querySelectorAll('#lieuEtude')
+    let villeEtude1 = document.querySelectorAll('#villeEtude')
+    let debutEtude1 = document.querySelectorAll('#debutEtude')
+    let finEtude1 = document.querySelectorAll('#finEtude')
+    //projet
+    let projet = document.querySelectorAll('#titreProjet')
+    let descriptionProjet = document.querySelectorAll('#descriptionProjet')
+    //langues
+    let langue = document.querySelectorAll('#lang')
+    let niv = document.querySelectorAll('#niv')
+    // image
+    const imgCv = document.getElementById('imgCv');
 
+
+    // validation dans la partie formation personnelle
     if (nomComplet.value.trim() === '' || nomComplet.value.length > 100) {
         nomComplet.style.border = '2px solid red';
         condition = false;
@@ -462,6 +479,7 @@ const Validation = () => {
         }
     });
 
+    // validation dans la partie profile
     if (descriptionProfile.value.trim() === '' || descriptionProfile.value.length > 500) {
         descriptionProfile.style.border = '2px solid red';
         condition = false;
@@ -469,10 +487,15 @@ const Validation = () => {
         descriptionProfile.style.border = '2px solid green';
     }
 
+
+    // validation dans la partie condition
     if(!conditionRadio){
         alert("No validation Verifier All the fomulaire")
         condition = false;
     }
+
+
+    // validation dans la partie competence
     competences.forEach(input => {
         if (input.value.trim() === '') {
             input.style.border = '2px solid red';  
@@ -483,6 +506,8 @@ const Validation = () => {
     });
 
 
+
+    // validation dans la partie experience
     post1.forEach(input => {
         if (input.value.trim() === '') {
             input.style.border = '2px solid red'; 
@@ -537,6 +562,101 @@ const Validation = () => {
         }
     });
 
+
+    // validation dans la partie education
+    educationGenerale1.forEach(input => {
+        if (input.value.trim() === '') {
+            input.style.border = '2px solid red';
+            condition = false;
+        } else {
+            input.style.border = '2px solid green';
+        }
+    });
+
+    lieuEtude1.forEach(input => {
+        if (input.value.trim() === '') {
+            input.style.border = '2px solid red';
+            condition = false;
+        } else {
+            input.style.border = '2px solid green';
+        }
+    });
+
+    villeEtude1.forEach(input => {
+        if (input.value.trim() === '') {
+            input.style.border = '2px solid red';
+            condition = false;
+        } else {
+            input.style.border = '2px solid green';
+        }
+    });
+
+    debutEtude1.forEach(input => {
+        if (input.value.trim() === '') {
+            input.style.border = '2px solid red';
+            condition = false;
+        } else {
+            input.style.border = '2px solid green';
+        }
+    });
+
+    finEtude1.forEach(input => {
+        if (input.value.trim() === '') {
+            input.style.border = '2px solid red';
+            condition = false;
+        } else {
+            input.style.border = '2px solid green';
+        }
+    });
+
+    // validation dans la partie projet
+    projet.forEach(input => {
+        if (input.value.trim() === '') {
+            input.style.border = '2px solid red';
+            condition = false;
+        } else {
+            input.style.border = '2px solid green';
+        }
+    });
+
+    descriptionProjet.forEach(input => {
+        if (input.value.trim() === '') {
+            input.style.border = '2px solid red';
+            condition = false;
+        } else {
+            input.style.border = '2px solid green';
+        }
+    });
+
+
+    // validation dans la partie langue
+    langue.forEach(input => {
+        if (input.value.trim() === '') {
+            input.style.border = '2px solid red';
+            condition = false;
+        } else {
+            input.style.border = '2px solid green';
+        }
+    });
+
+    niv.forEach(input => {
+        if (input.value.trim() === '') {
+            input.style.border = '2px solid red';
+            condition = false;
+        } else {
+            input.style.border = '2px solid green';
+        }
+    });
+
+    // validation d'image
+    if (imgCv.files.length === 0) {
+        imgCv.style.border = '2px solid red'; 
+        condition = false;
+    } else {
+        imgCv.style.border = '2px solid green';
+    }
+
+    
     return condition; 
 
 }
