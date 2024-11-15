@@ -114,7 +114,6 @@ const getLangueValues = () => {
 };
 
 // dynamique form competence
-let formCompetenceCounter = 2;
 const AddFormCompetence = (event) => {
   event.preventDefault();
 
@@ -127,7 +126,7 @@ const AddFormCompetence = (event) => {
         <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
             Compétence
         </label>
-        <input id="competence${formCompetenceCounter}" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre competence">
+        <input id="competence" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre competence">
     </div>
     <button onclick="DeleteFormCompetence(this)" class="bg-red-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
         -
@@ -135,7 +134,6 @@ const AddFormCompetence = (event) => {
     `;
 
   document.getElementById("parent-compt").appendChild(formContainer);
-  formCompetenceCounter++;
 };
 
 const DeleteFormCompetence = (button) => {
