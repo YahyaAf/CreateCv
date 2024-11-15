@@ -544,12 +544,21 @@ const Validation = () => {
         }
     });
 
-    debutExp1.forEach(input => {
+    debutExp1.forEach((input, index) => {
+        const startDate = new Date(input.value);
+        const endDate = new Date(finExp1[index].value); 
+
         if (input.value.trim() === '') {
             input.style.border = '2px solid red';
             condition = false;
         } else {
             input.style.border = '2px solid green';
+        }
+
+        if (startDate > endDate) {
+            input.style.border = '2px solid red';
+            finExp1[index].style.border = '2px solid red';
+            condition = false;
         }
     });
 
@@ -591,12 +600,21 @@ const Validation = () => {
         }
     });
 
-    debutEtude1.forEach(input => {
+    debutEtude1.forEach((input, index) => {
+        const startDate = new Date(input.value);
+        const endDate = new Date(finEtude1[index].value); 
+
         if (input.value.trim() === '') {
             input.style.border = '2px solid red';
             condition = false;
         } else {
             input.style.border = '2px solid green';
+        }
+
+        if (startDate > endDate) {
+            input.style.border = '2px solid red';
+            finEtude1[index].style.border = '2px solid red';
+            condition = false;
         }
     });
 
