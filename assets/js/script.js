@@ -20,18 +20,17 @@ const steppers = [
 ];
 let counterForm = 0;
 const Next = () => {
-  if (counterForm < forms.length - 1) {
-    forms[counterForm].classList.add("hidden");
-    steppers[counterForm].classList.remove("bg-gray-900", "text-white");
-    steppers[counterForm].classList.add("bg-gray-300", "text-gray-900");
-    counterForm++;
-    forms[counterForm].classList.remove("hidden");
-    steppers[counterForm].classList.add("bg-gray-900", "text-white");
-    steppers[counterForm].classList.remove("bg-gray-300", "text-gray-900");
-  }else{
+    if (counterForm < forms.length - 1) {
+        forms[counterForm].classList.add("hidden");
+        steppers[counterForm].classList.remove("bg-gray-900", "text-white");
+        steppers[counterForm].classList.add("bg-gray-300", "text-gray-900");
+        counterForm++;
+        forms[counterForm].classList.remove("hidden");
+        steppers[counterForm].classList.add("bg-gray-900", "text-white");
+        steppers[counterForm].classList.remove("bg-gray-300", "text-gray-900");
+    }else{
         document.getElementById('save').classList.remove("hidden");
-  }
-  
+    }
 };
 
 const Back = () => {
@@ -410,10 +409,79 @@ const showValue = () => {
     return selectedRate ? selectedRate.value : null;
 }
 
+
+
+// Validation de formulaire
+const Validation = () => {
+    let condition = true; 
+
+    // information personelle
+    const nomComplet = document.getElementById('nom');
+    const email = document.getElementById('email');
+    const titleCv = document.getElementById('titleCv');
+    const linkedin = document.getElementById('linkedin');
+    const github = document.getElementById('github');
+    const numero = document.getElementById('numero');
+    // profile
+    let descriptionProfile = document.getElementById('descriptionProfile');
+    // condition
+    let conditionRadio = showValue();
+
+    if (nomComplet.value.trim() === '' || nomComplet.value.length > 100) {
+        nomComplet.style.border = '2px solid red';
+        condition = false;
+    } else {
+        nomComplet.style.border = '2px solid green';
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.value)) {
+        email.style.border = '2px solid red';
+        condition = false;
+    } else {
+        email.style.border = '2px solid green';
+    }
+
+    const numeroRegex = /^06\d{8}$/;
+    if (!numeroRegex.test(numero.value)) {
+        numero.style.border = '2px solid red';
+        condition = false;
+    } else {
+        numero.style.border = '2px solid green';
+    }
+
+    [titleCv, linkedin, github].forEach(field => {
+        if (field.value.trim() === '') {
+            field.style.border = '2px solid red';
+            condition = false;
+        } else {
+            field.style.border = '2px solid green';
+        }
+    });
+
+    if (descriptionProfile.value.trim() === '' || descriptionProfile.value.length > 500) {
+        descriptionProfile.style.border = '2px solid red';
+        condition = false;
+    } else {
+        descriptionProfile.style.border = '2px solid green';
+    }
+
+    if(!conditionRadio){
+        alert("No validation Verifier All the fomulaire")
+        condition = false;
+    }
+
+    return condition; 
+
+}
+
+
+
 // Save data dans le Cv
 const Save = (event) => {
     event.preventDefault();
-    // information personelle
+    if(Validation()){
+        // information personelle
         let nomComplet = document.getElementById('nom').value;
         let email = document.getElementById('email').value;
         let titleCv = document.getElementById('titleCv').value;
@@ -482,7 +550,7 @@ const Save = (event) => {
 
     parentStep.classList.add("hidden");
     parentSection.classList.add("hidden");
-    
+
     if(condition === "classic"){
         document.getElementById('btndwlond').classList.remove("hidden");
         document.getElementById('btndwlond').classList.add("flex");
@@ -752,6 +820,7 @@ const Save = (event) => {
         </div>
         `;
     }   
+    }
 }
 
 
