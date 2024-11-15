@@ -313,7 +313,6 @@ const getProjetValues = () => {
 };
 
 // dynamique form education
-let formEducationCounter = 2;
 const AddFormEducation = (event) => {
   event.preventDefault();
 
@@ -328,7 +327,7 @@ const AddFormEducation = (event) => {
                     <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                         Education générale
                     </label>
-                    <input id="educationGenerale${formEducationCounter}" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre type et spécialisation">
+                    <input id="educationGenerale" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre type et spécialisation">
                 </div>
             </div>
             <div class="w-full lg:w-12/12 px-4">
@@ -336,7 +335,7 @@ const AddFormEducation = (event) => {
                     <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                         Lieu d'étude
                     </label>
-                    <input id="lieuEtude${formEducationCounter}" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre lieu d'etude">
+                    <input id="lieuEtude" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre lieu d'etude">
                 </div>
             </div>
             <div class="w-full lg:w-4/12 px-4">
@@ -344,7 +343,7 @@ const AddFormEducation = (event) => {
                     <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                         Ville
                     </label>
-                    <input id="villeEtude${formEducationCounter}" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre ville">
+                    <input id="villeEtude" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre ville">
                 </div>
             </div>
             <div class="w-full lg:w-4/12 px-4">
@@ -352,7 +351,7 @@ const AddFormEducation = (event) => {
                     <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                         Date d'Ebut
                     </label>
-                    <input id="debutEtude${formEducationCounter}" type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                    <input id="debutEtude" type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                 </div>
             </div>
             <div class="w-full lg:w-4/12 px-4">
@@ -360,7 +359,7 @@ const AddFormEducation = (event) => {
                     <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                         Date Fin
                     </label>
-                    <input id="finEtude${formEducationCounter}" type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                    <input id="finEtude" type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                 </div>
             </div>
         </div>
@@ -370,7 +369,7 @@ const AddFormEducation = (event) => {
     `;
 
   document.getElementById("parent-education").appendChild(formContainer);
-  formEducationCounter++;
+
 };
 
 const DeleteFormEducation = (button) => {
@@ -517,11 +516,11 @@ const Save = (event) => {
                 <p class="text-gray-700">${e.description}</p>
             `).join("")
     // Education
-        let educationGenerale1 = document.getElementById('educationGenerale1').value
-        let lieuEtude1 = document.getElementById('lieuEtude1').value
-        let villeEtude1 = document.getElementById('villeEtude1').value
-        let debutEtude1 = document.getElementById('debutEtude1').value
-        let finEtude1 = document.getElementById('finEtude1').value
+        let educationGenerale1 = document.getElementById('educationGenerale').value
+        let lieuEtude1 = document.getElementById('lieuEtude').value
+        let villeEtude1 = document.getElementById('villeEtude').value
+        let debutEtude1 = document.getElementById('debutEtude').value
+        let finEtude1 = document.getElementById('finEtude').value
         let educationDyn = getEducationValues()
         let afficheDynamiqueEducations = educationDyn.map(e => `
             <div class="mb-4">
