@@ -48,7 +48,6 @@ const Back = () => {
 };
 
 // dynamique form langage
-let formLangagueCounter = 2;
 const AddFormLangague = (event) => {
   event.preventDefault();
 
@@ -63,7 +62,7 @@ const AddFormLangague = (event) => {
                         <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                                 Langue
                         </label>
-                        <input id="lang${formLangagueCounter}" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre Compétence">
+                        <input id="lang" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre Compétence">
                 </div>
         </div>
         <div class="w-full lg:w-12/12 px-4">
@@ -71,7 +70,7 @@ const AddFormLangague = (event) => {
                         <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="language-level">
                                 Niveau de langue
                         </label>
-                        <select id="niv${formLangagueCounter}" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                        <select id="niv" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                 <option value="A1">A1 - Débutant</option>
                                 <option value="A2">A2 - Élémentaire</option>
                                 <option value="B1">B1 - Intermédiaire</option>
@@ -87,7 +86,7 @@ const AddFormLangague = (event) => {
     `;
 
   document.getElementById("parent-lang").appendChild(formContainer);
-  formLangagueCounter++;
+  
 };
 const DeleteFormLangague = (button) => {
   const formContainer = button.parentElement;
