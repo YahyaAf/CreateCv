@@ -252,7 +252,6 @@ const getExperienceValues = () => {
 
 
 // dynamique form projet
-let formProjetCounter = 2;
 const AddFormProjet = (event) => {
   event.preventDefault();
 
@@ -266,7 +265,7 @@ const AddFormProjet = (event) => {
                 <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                     Titre De Projet
                 </label>
-                <input id="titreProjet${formProjetCounter}" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre Compétence">
+                <input id="titreProjet" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Votre Compétence">
             </div>
         </div>
         <div class="w-full lg:w-12/12 px-4">
@@ -274,7 +273,7 @@ const AddFormProjet = (event) => {
                 <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
                     Description
                 </label>
-                <textarea id="descriptionProjet${formProjetCounter}" placeholder="Votre description sur le projet" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" rows="4"></textarea>
+                <textarea id="descriptionProjet" placeholder="Votre description sur le projet" type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" rows="4"></textarea>
             </div>
         </div>
         <button onclick="DeleteFormProjet(this)" class="bg-red-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
@@ -283,7 +282,6 @@ const AddFormProjet = (event) => {
     `;
 
   document.getElementById("parent-projet").appendChild(formContainer);
-  formProjetCounter++;
 };
 
 const DeleteFormProjet = (button) => {
