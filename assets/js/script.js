@@ -22,7 +22,6 @@ let counterForm = 0;
 const Next = () => {
     if (counterForm < forms.length - 1) {
         forms[counterForm].classList.add("hidden");
-        steppers[counterForm].classList.remove("bg-gray-900", "text-white");
         steppers[counterForm].classList.add("bg-gray-300", "text-gray-900");
         counterForm++;
         forms[counterForm].classList.remove("hidden");
